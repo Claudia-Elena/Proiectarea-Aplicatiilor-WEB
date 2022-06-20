@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura juerī</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/JueriShop.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header>
+
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">Sakura Juerī<span>.</span></a>
+
+    <nav class="navbar">
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Jewelries" asp-action="Index">Products</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+    
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fa fa-shopping-cart"></a>
+        <a href="login.html" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Sakura Juerī</h3>
+        <span>  </span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum ut minus corrupti dolorum dolore assumenda iste voluptate dolorem pariatur.</p>
+ <a class="btn" asp-area="" asp-controller="Jewelries" asp-action="Index">Products</a>
+    </div>
+    
+</section>
+
+<!-- home section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+          <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Privacy</a>
+  <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">About</a>
+   <a class="nav-link text-dark" asp-area="" asp-controller="Jewelries" asp-action="Index">Products</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+    
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#">my account</a>
+            <a href="#">my order</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">example@gmail.com</a>
+            <img src="images/payment.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="credit"> &copy;2022 Ciontu Claudia-Elena </div>
+
+</section>
+
+<!-- footer section ends -->
+
+    
+</body>
+</html>

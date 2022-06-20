@@ -1,0 +1,173 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<h1>@ViewData["Title"]</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura juerī</title>
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/JueriShop.styles.css" asp-append-version="true" />
+    <style>
+.contact .row{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap:1.5rem;
+    align-items: center;
+}
+
+.contact .row form{
+    flex:1 1 40rem;
+    padding:2rem 2.5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border:.1rem solid rgba(0,0,0,.1);
+    background: #fff;
+    border-radius: .5rem;
+}
+
+.contact .row .image{
+    flex:1 1 40rem;
+}
+
+.contact .row .image img{
+    width: 100%;
+}
+
+.contact .row form .box{
+    padding:1rem;
+    font-size: 1.7rem;
+    color:#333;
+    text-transform: none;
+    border:.1rem solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+    margin:.7rem 0;
+    width: 100%;
+}
+
+.contact .row form .box:focus{
+    border-color: var(--pink);
+}
+
+.contact .row form textarea{
+    height: 15rem;
+    resize: none;
+}
+</style>
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header>
+
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">Contact<span>.</span></a>
+
+      <nav class="navbar">
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Jewelries" asp-action="Index">Products</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+  
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="login.html" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Sakura Juerī</h3>
+        <span>  </span>
+        <p> </p>
+        <a href="#" class="btn">shop now</a>
+    </div>
+    
+</section>
+
+<!-- home section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span> contact </span> us </h1>
+
+    <div class="row">
+
+        <form action="">
+            <input type="text" placeholder="name" class="box">
+            <input type="email" placeholder="email" class="box">
+            <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+
+        <div class="image">
+            <img src="images/accesory-jewelry-svgrepo-com.svg" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Privacy</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">About</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Jewelries" asp-action="Index">Products</a>
+ <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+    
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#">my account</a>
+            <a href="#">my order</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">example@gmail.com</a>
+            <img src="images/payment.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="credit"> &copy;2022 Ciontu Claudia-Elena </div>
+
+</section>
+
+<!-- footer section ends -->
+
+    
+</body>
+</html>
+
+
+

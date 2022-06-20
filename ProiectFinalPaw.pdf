@@ -1,0 +1,153 @@
+
+
+Examen la Proiectarea Aplicatiilor Web 
+~Sakura Jueri~
+ 
+
+Student: Ciontu Claudia-Elena
+Grupa: CR3.1B
+Data: 06.17.2022
+
+
+
+
+
+
+
+1. Descrieti rolul si obiectivele aplicatiei. Specificati in detaliu cerintele aplicatiei.
+SakuraJueri este o aplicatie WEB pentru gestionarea unui magazin online (E-Commerce) de Bijuteri. Atat denumirea in sine reprezinta tema (Jueri in japoneza semnificand Bujuterie) , cat si produsele avand ca tema principala "SAKURA" (in japoneza semnificand flori de ciresi).
+Aceasta aplicatie Web a aparut datorita pasiunii pentru micile bijuteri ale Japoniei ,cat si frumusetea culturii sale.
+Cu ajutorul acestei aplicatii ,poti descoperii o gama larga de bijuterii de toate felurile,cat sa si vinzi produsele . Aceast? aplica?ie poate fi folosit? de dou? tipuri de utilizatori:
+Userii sau utilizatorii cu rol de user au rolul de a-si crea un cont pe baza unui email si o parola, urmat de navigarea paginilor pentru a vizualiza produsele, a le cumpara  ,informatii generale legate de site, informatii despre contul actual de user ,actualizarea informatiilor sau update la informatii pentru un cont de utilizator di informatii de contactare
+
+Administratorii sau utilizatorii cu rol de admin au rolul asemanator ca si cel al unui user normal ,cu precizarea unor functionalitati in plus :
+-----> Pot actualiza pagina produselor prin adaugarea, editarea sau stergerea produselor. 
+----->Pot vizualiza politica de confidentialitate
+
+În primul rând, în aplica?ie exist? o sec?iune de înregistrare în care utilizatorul î?i creeaz? un cont ?i prime?te automat rolul de utilizator(In Baza de date a aplicatiei se poate seta manual in functie de ID rolul unui utilizator, fie user, fie admin). Ei pot completa acea sec?iune cu e-mailul ?i parola. Aplica?ia con?ine o pagin? de conectare în care utilizatorul î?i introduce datele, adic? e-mailul ?i parola, iar dac? acestea corespund datelor de la crearea contului, vor fi direc?iona?i c?tre pagina de pornire. 
+
+2. Modelati aplicatia folosind diagrame UML (Diagrama de cazuri de utilizare, Diagrama de activitati,Diagrama de clase, Diagrama de stare, Model de structura hipertext, Model de acces, Pagina de prezentare, Diagrama de interactiune, Diagrama de secventa).
+
+Diagrama de cazuri de utilizare:
+ 
+ 
+
+Diagrama de activitati:
+ 
+
+
+Diagrama de clase:
+
+Diagrama de stare:
+
+Model de structura hipertext:
+
+Model de acces:
+Pagian de prezentare:
+Diagrama de interactiune:
+Diagrama de secventa:
+
+3. Descrieti arhitectura sistemului si structura bazei de date (inclusiv diagrame).
+ 
+Am folosit Model-View-Controller pentru  a crea aceasta aplicatie in ASP.NET Core 6 
+Modelele sunt  
+ 
+Controller:
+ 
+
+ 
+Userul si adminul vad Interfete viasuale diferite ,datorita rolurilor acordate 
+ 
+
+
+4. Descrieti functionalitatile pe care le-ati implementat si ilustrati-le cu capturi de ecran (screenshots).
+In imaginile de mai jos se vor putea observa  paginie create si functionalitatile lor.
+Prima data va trebui sa ne Inregistram ori sa ne logam cu un cont reprezentat de un email si o parola. Prima data pentru Register va trebui sa introducem un emain si o parola cu verificare dubla pntru a confirma corectitudinea primei. 
+ 
+Pentru securitatea datelor este necesar sa avem parole mai puternice (mai lungi ) si sa coincida cele 2 parole introduse de la tastatura
+ 
+De asemenea ,avem o verificare cu regex pentru email si ne anunta cand lipseste ceva sau emailul nu este introdus corect.
+ 
+
+Daca deja avem un cont putem sa introducem datele direct in fereastra de login.
+
+ 
+Mai jos este un exemplu de incercare a introduceri unui cont care nu este introdus in baza de date si putem oberva mesajul cu "Invalid Login Attempt" .
+ 
+Odata Intrati in conturile noastre vom putea vedea pagina de HOME. 
+Toate paginile se aseamana ca si template :
+Header: Bara de sus unde putem naviga pe pagini cu nume destul de sugestive
+Body: V-a contine infrmatiile necesarei paginii 
+Footer: Are linkuri asemanatoare Headerului pentru simplitate si navigare mai usoara.
+
+ 
+ 
+
+
+Pagina de Privacy o sa scrie datele despre siguranta site-ului si de a informa userii la ce sa se astepte
+ 
+Pagina de About o sa descrie detalii despre Site, de ce sa ne aleaga utilizatorii s de ce sa ne aleaga produsele.
+ 
+Pagina de Product o sa afiseze produsele noastre cu denumirea in coltul din Dreapta sus, urmat de Codul Numeric al produsului, descriere si pret. Si desigur o imagine pentru produsul nostru.
+ 
+Pagina de Contact o sa arate o fereastra mica unde un utilizator ar trebui sa scrie un email cu nume si descriere , in cazul in care vor sa ne contacteze
+ 
+
+
+
+
+
+
+5. Ce metode de testare ati folosit pentru aplicatia voastra? Descrieti procesul de testare, precum si o problema identificata si solutia aplicata pentru rezolvarea sa.
+In primul rand a fost testata inregistrarea cu conditiile :
+email cu regex verificat( something@yahoo.com)
+ 
+introducerea parolei de 2 ori pentru verificarea corectitudinii 
+parola trebuie sa fie mai puternica de mai multe caractere
+ 
+dupa inregistrarea cu succes apare direct pagina de home.
+
+La fel pot spune si legat de Logare unde o sa verifice daca datele introduse se gasesc in baza de date , atunci o sa redirectioneze utilizatorul la pagina principala ,iar in caz contrar,mesaj cu invalid cont.
+
+O problema  la aplicatie ar fi ca la inregistrare,mereu o sa fie ca si utiliator si nicioadata ca admin . Pentru aceasta problema , am introdus manual ID-ul in aplicatie (Id care e unic) si asa am reusit sa setez manual un user obisnuit ca si administrator folosindu-ma de cele 3 tabele din baza mea de date
+ 
+ 
+ 
+
+
+
+6. Elaborati un plan de promovare a aplicatiei voastre.
+Pentru promovarea aplicatiei m-am gandit la niste idei comune , cum ar fi google ads sau facebook ads deoarece sunt foarte raspandite  si folosite . O alta metoda de promovare sunt postere la mici cafenele sau mici videoclipuri pe youtube ,tik tok,instagram si facebook. Cu ajutorul unor distribuiri pe aceleasi aplicatii de socializare ,insa din partea prietenilor si cateva recomandari din partea loc.
+7. Descrieti aspectele de utilizabilitate si accesibilitate relevante pentru aplicatia voastra; cum ati putea sa le integrati / implementati?
+Este o aplicatie foarte usor de folosit din moemnt ce nu are multe pagini de navigare si denumirile sunt destul de sugestive al folosirii lor , precun Products, Register, About etc. Este placuta vizuat si impartita in asa fel incat sa fie usor de inteles (Header,Body si Footer)  si Footerul are linkuri de acces rapid al barei de navigare din header pentru accesibilitate si mai rapida .
+8. Descrieti aspectele de securitate relevante pentru aplicatia voastra; cum ati putea sa le integrati / implementati?
+Aspecte de securitate am enumerat mai sus legat de logarea si inregistrarea unui user.
+De asemenea am enuntat ca diferentierea intre un administrator si un user o fac manual cu ajutorul celor 3 tabele:
+User, UserRoles si Roles. Mai jos se oberva ca am acces dennied ca s user oentru a accesa pagina de mai jos. Am folosit autorizarea din Identity pentru a alege cine are acces la anumite pagini sau functii.
+ 
+
+
+9. Enumerati limitarile si punctele slabe ale aplicatiei voastre, precum si imbunatatirile / extinderile care s- ar putea realiza ulterior.
+Aplicatia este destul de limitata ,atat din punct de vedere am frontendului, deoarece nu sunt suficiente pagini cu detalii mai multe si este liitat doar la cateva pagini si functiuni. 
+Din punct de vedere la Backendului nu am resit sa termin ce mi-am propus , cum ar fi sa pot face un review la un produs sau sa il pot adauga la lista mea de cumparaturi .
+Nu am reusit sa implementez cum mi-am creat initial frontendul aplicatiei din lipsa de cunostinte si a fost destul de greu pentru mine sa adaug html si css in ASP.NET .
+Dupa cum am enumerat mai sus, se poate loga si/ sau inregistra un user , poate naviga doar pe paginile prezentate si el mult adminul poate sa creeze produse noi ,doar ca se va afisa mereu aceeasi poza) . Nu se pot  edita datele unui produs  desi putem intra in pagina de editare,insa odata ce apasam butonul de save nu se salveaza. 
+Pe viitor ma gandesc sa refac diagramele deoarece au fost gandite destul de gresit si am observat acest lucru doar la final.
+O sa incerc sa nu ma mai grabesc in realizarea frontendului si sa caut mai multe informatii inainte.
+10. (raspunsul la aceasta cerinta nu se va puncta, dar este obligatoriu, asa ca va rog sa il completati si sa va evaluati in mod corect si onest)
+
+Nota pe care considerati ca o meritati la laborator:7
+Nota pe care considerati ca o meritati la examen (documentul curent):8
+Numar de ore alocat pentru elaborarea acestui document:10
+Resurse folosite pentru elaborarea acestui document:
+https://www.edrawsoft.com/article/system-architecture-diagram.html
+https://classroom.google.com/u/0/w/NDY5ODEzMzY2MDQy/t/all
+https://app.diagrams.net/
+Preferati acest tip de evaluare sau un examen clasic? Care e mai util / relevant? Care necesita mai mult timp pentru pregatire?
+Eu personal prefer acest tip de evaluare deoarece scapam de emotiile de a da o lucrare scrisa sau un examen oral si ne putem concentra mai mult pe o documentatie undee aratam ce am realizat un semestru intreg la orele de laborator sa facem . Este mult mai practic, iti dai seama ce greseli ai facut odata ce te uiti in urma si realizezi ca ai mai multe cunostinte decat credeai.
+Este mai util sa creem o documentatie pe un proiect real facut de noi , cu bune cu rele, dar ne asumam greselile si invatam ceva din ele.
+Impresii generale despre laborator & curs si sugestii de imbunatatire:
+Singura nemultumire a fost limbajul ed programare in care am lucrat ,deoarece mi s-a parut destul de greu si timp putin de asimilat . As fi preferat ceva mai mult sa fie PHP, JS ,angular sau React.
+
+
+

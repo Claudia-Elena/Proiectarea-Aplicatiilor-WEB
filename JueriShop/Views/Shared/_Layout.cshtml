@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - JueriShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/JueriShop.styles.css" asp-append-version="true" />
+ <style>
+     :root {
+    --pink: #e84393;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(255, 51, 153,.05);
+}
+
+    .heading span {
+        color: var(--pink);
+    }
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+    .btn:hover {
+        background: var(--pink);
+    }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+    header .logo {
+        font-size: 3rem;
+        color: #333;
+        font-weight: bolder;
+    }
+
+        header .logo span {
+            color: var(--pink);
+        }
+
+    header .navbar a {
+        font-size: 2rem;
+        padding: 0 1.5rem;
+        color: #666;
+    }
+
+        header .navbar a:hover {
+            color: var(--pink);
+        }
+
+    header .icons a {
+        font-size: 2.5rem;
+        color: #333;
+        margin-left: 1.5rem;
+    }
+
+        header .icons a:hover {
+            color: var(--pink);
+        }
+
+    header #toggler {
+        display: none;
+    }
+
+    header .fa-bars {
+        font-size: 3rem;
+        color: #333;
+        border-radius: .5rem;
+        padding: .5rem 1.5rem;
+        cursor: pointer;
+        border: .1rem solid rgba(0,0,0,.3);
+        display: none;
+    }
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg1.cgtrader.com%2Fitems%2F2448611%2Fd6da915134%2F3d-pink-diamond-jewelry-background-abstract-3d-model-blend.jpg&f=1&nofb=1") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home_prod {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url("../images/bg1.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 50rem;
+}
+
+    .home .content h3 {
+        font-size: 6rem;
+        color: #333;
+    }
+
+.home_prod .content h3 {
+    font-size: 5rem;
+    color: #333;
+    display: right;
+}
+
+.home .content span {
+    font-size: 3.5rem;
+    color: var(--pink);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p {
+    font-size: 1.5rem;
+    color: #999;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+ </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+     
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sakura Jueri</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Jewelries" asp-action="Index">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

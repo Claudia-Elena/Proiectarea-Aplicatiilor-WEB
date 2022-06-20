@@ -1,0 +1,182 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - JueriShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="font=awsome.css">
+    <style>
+.form-container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items:center ;
+    justify-content : left;
+}
+.form-container form{
+    height: 450px;
+    width: 350px;
+    background: rgba(255, 255, 255,.1);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0,.3);
+    border-top: 1px solid rgba(255, 255, 255,.3);
+    border-left: 1px solid rgba(255, 255, 255,.3);
+    backdrop-filter: blur(10px);
+}
+.form-container form h3{
+    font-size: 30px;
+    padding: 30px 0;
+    color: rgb(104, 37, 95); ;
+    letter-spacing: 3px;
+}
+.form-container form i{
+    padding: 0 5px;
+    font-size: 20px;
+    color: rgb(104, 37, 95);
+}
+.form-container form input{
+    outline: none;
+    border: none;
+    height: 40px;
+    width: 82%;
+    background: #651b681a;
+    color:  rgb(106, 37, 97);;
+    box-shadow: 0 0 5px rgba(62, 29, 88, 0.5) inset;
+    font-size: 17px;
+    padding: 0 10px;
+    margin: 15px 0;
+    letter-spacing: 1px;
+}
+.form-container form input[type="submit"]{
+    width: 90%;
+    cursor: pointer;
+    background: linear-gradient(90deg,rgba(106, 37, 97,.7),rgb(255, 20, 147) );
+    margin-top: 30px;
+    border-radius: 50px;
+
+}
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+
+.form button {
+	background-color: #8e44ad;
+	border: 2px solid #8e44ad;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+
+
+
+</style>
+</head>
+<body>
+<h1>@ViewData["Title"]</h1>
+<section class="home" id="home">
+     <div class="form-container">
+            <form id="account" method="post">
+                <h3>login</h3>
+               
+                <div asp-validation-summary="ModelOnly" ></div>
+               
+                    <i class="fas fa-at">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email" class="form-label"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                  </i>
+                    <i class="fas fa-lock">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                    <label asp-for="Input.Password" class="form-label"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                  </i>
+                    <input  type="submit" value="Login" />
+                     <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Don't have an account?</a>
+                     </p>
+                     
+                  
+              
+            </form>
+            </div>
+        </section>
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

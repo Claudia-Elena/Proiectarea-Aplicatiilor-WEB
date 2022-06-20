@@ -1,0 +1,71 @@
+﻿@model IEnumerable<JueriShop.Models.Jewelry>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - JueriShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/JueriShop.styles.css" asp-append-version="true" />
+</head>
+<body>
+<h1>Index</h1>
+
+
+<section class="products" id="products">
+
+        <h1 class="heading"> latest <span>products</span> </h1>
+        <section class="home" id="home">
+
+    <div class="content">
+        <h3>Sakura Juerī</h3>
+        <span>  </span>
+    <a asp-action="Create">Create New</a>
+    </div>
+    
+</section>
+       
+@foreach (var item in Model) {
+    
+
+        <div class="box-container">
+
+                
+          <div class="image">
+              <img src="images/1-sakura.jpg" alt="">
+                    <div class="icons">
+                       
+                        <a href="#" class="cart-btn">add to cart</a>
+                       
+                    </div>
+                </div>
+                <div class="content">
+                 <h3>
+                @Html.DisplayFor(modelItem => item.Name)
+           </h3>
+           <div class="price"> SerialNumber: <span>
+                @Html.DisplayFor(modelItem => item.SerialNumber)</span>
+                </div>           
+                <div class="price"> Description: <span>
+                @Html.DisplayFor(modelItem => item.Description)</span>
+                </div>         
+                <div class="price"> Price: <span>
+                @Html.DisplayFor(modelItem => item.Price)</span>
+                </div>
+         
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdJewel">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdJewel">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdJewel">Delete</a>
+            </td>
+       
+        </div></div>
+}
+    
+</body>
+</html>
